@@ -128,3 +128,32 @@
   50% { transform: translate(-50%, -50%) scale(1.1); }
   100% { transform: translate(-50%, -50%) scale(1); }
 }
+
+.activeBtn {
+  background: rgba(16, 185, 129, 0.2);
+  border-color: rgba(16, 185, 129, 0.5);
+  color: #10b981;
+}
+
+.heatmapActive {
+  background: radial-gradient(circle at 15% 20%, rgba(239, 68, 68, 0.2) 0%, var(--bg-secondary) 50%, var(--bg-primary) 100%);
+}
+
+.heatmapHot {
+  animation: none;
+  transform: translate(-50%, -50%) scale(1.3);
+  color: #ef4444;
+  text-shadow: 0 0 10px rgba(239, 68, 68, 0.8);
+}
+
+.highlightedRestroom {
+  color: #10b981;
+  transform: translate(-50%, -50%) scale(1.5);
+  animation: highlightPulse 1s infinite alternate;
+  z-index: 10;
+}
+
+@keyframes highlightPulse {
+  from { transform: translate(-50%, -50%) scale(1.2); text-shadow: 0 0 5px #10b981; }
+  to { transform: translate(-50%, -50%) scale(1.6); text-shadow: 0 0 20px #10b981; }
+}

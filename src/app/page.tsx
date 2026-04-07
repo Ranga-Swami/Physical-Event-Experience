@@ -4,6 +4,9 @@ import { useState } from 'react';
 import { Card } from '@/components/ui/Card';
 import { VenueMap } from '@/components/VenueMap';
 import { AssistantChat } from '@/components/AssistantChat';
+import { MatchTimeline } from '@/components/MatchTimeline';
+import { BroadcastBanner } from '@/components/BroadcastBanner';
+import { PreOrderPanel } from '@/components/PreOrderPanel';
 import { Clock, Users, Activity, Coffee, Navigation } from 'lucide-react';
 import styles from './page.module.css';
 
@@ -12,13 +15,11 @@ export default function Home() {
   
   return (
     <div className={styles.dashboard}>
-      <header className={styles.header}>
-        <h1 className={styles.title}>Venue Dashboard</h1>
-        <div className={styles.eventStatus}>
-          <div className={styles.liveIndicator} />
-          Half-Time (15:00 remaining)
-        </div>
-      </header>
+      <MatchTimeline />
+      <BroadcastBanner 
+        type="promo" 
+        message="FLASH SALE: 20% off all merchandise at the Team Store in Section 102 until the end of the quarter!" 
+      />
 
       <div className={styles.grid}>
         <div className={styles.mainColumn}>
@@ -64,6 +65,8 @@ export default function Home() {
             <h2 className={styles.sectionTitle}>Ask Assistant</h2>
             <AssistantChat />
           </div>
+
+          <PreOrderPanel />
         </div>
       </div>
     </div>
